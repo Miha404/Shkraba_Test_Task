@@ -38,5 +38,20 @@ public class CalculatorPageSteps {
                 .getBuyInputValue();
     }
 
+    @Step("Select country {string}")
+    public CalculatorPageSteps selectCountryStep(String countryName) {
+        calculatorPage
+                .clickLocationButton()
+                .clickCountryDropdown()
+                .selectCountry(countryName);
+        return this;
+    }
+
+    @Step("Get letter designation from default currency dropdown")
+    public String getDefaultCurrencyDropdownValueStep() {
+        calculatorPage.isPageOpened();
+        return calculatorPage
+                .getDefaultCurrencyDropdownValue();
+    }
 
 }

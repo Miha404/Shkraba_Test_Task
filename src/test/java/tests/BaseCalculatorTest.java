@@ -1,6 +1,5 @@
 package tests;
 
-import com.andersen.shkraba.baseModels.BasePage;
 import com.andersen.shkraba.baseModels.BaseTest;
 import org.testng.annotations.BeforeClass;
 import pages.MainPage;
@@ -15,5 +14,6 @@ public class BaseCalculatorTest extends BaseTest {
     protected void createPages() {
         mainPage = new MainPage();
         calculatorPageSteps = new CalculatorPageSteps();
+        mainPage.openPage().openCalculatorPage().isPageOpened();
     }
 }
