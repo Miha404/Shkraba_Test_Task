@@ -3,7 +3,7 @@ Run command in terminal:
 
 > mvn clean install -Dmaven.test.skip=true
 
-> mvn clean test -Dtestfile=testNG  
+> mvn clean test  
 > (the URL of the page is contained in the config.properties)
 
 

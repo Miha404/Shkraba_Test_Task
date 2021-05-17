@@ -1,6 +1,6 @@
 package pages;
 
-import com.andersen.shkraba.baseModels.BasePage;
+import com.andersen.shkraba.core.BasePage;
 import com.codeborne.selenide.Condition;
 import com.andersen.shkraba.utils.PropertyReader;
 
@@ -9,11 +9,11 @@ import static com.codeborne.selenide.Selenide.open;
 
 
 public class MainPage extends BasePage {
-    public static final String BOTTOM_BAR = "//div/*[@class='container']";
+    private final String bottomBar = "//div/*[@class='container']";
 
     @Override
-    protected MainPage isPageOpened() {
-        $(BOTTOM_BAR).shouldBe(Condition.visible);
+    protected MainPage waitForPageLoad() {
+        $(bottomBar).shouldBe(Condition.visible);
         return this;
     }
 

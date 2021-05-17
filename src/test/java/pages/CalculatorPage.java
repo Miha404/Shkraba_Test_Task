@@ -1,11 +1,11 @@
 package pages;
 
-import com.andersen.shkraba.baseModels.BasePage;
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.commands.GetInnerText;
 import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
+
+import com.andersen.shkraba.core.BasePage;
 
 public class CalculatorPage extends BasePage {
 
@@ -13,14 +13,13 @@ public class CalculatorPage extends BasePage {
     private final String buyInputLocator = "//input[@data-ng-model='currencyExchangeVM.filter.to_amount']";
     private final String sellInputLocator = "//input[@data-ng-model='currencyExchangeVM.filter.from_amount']";
     private final String countryDropdownElementLocator = "countries-dropdown";
-//    private final String locationInputLocator = "//input[@data-ng-model='currencyExchangeVM.filter.from_amount']";
     private final String chooseLocationButton = "//span[@class='js-localization-popover']";
     private final String defaultCurrencyDropdownLocator = "//form/div[contains(.,'Sell')]//span[@class='ng-binding ng-scope']";
     private final String selectCountryLocator = "//a[contains(.,'%s')]";
 
     @Override
-    public CalculatorPage isPageOpened() {
-        $(By.xpath(exchangeLoaderLocator)).shouldBe(Condition.hidden);
+    public CalculatorPage waitForPageLoad() {
+        $x(exchangeLoaderLocator).shouldBe(Condition.hidden);
         return this;
     }
 
@@ -30,30 +29,30 @@ public class CalculatorPage extends BasePage {
     }
 
     public CalculatorPage clearSellField() {
-        $(By.xpath(sellInputLocator)).clear();
+        $x(sellInputLocator).clear();
         return this;
     }
 
     public CalculatorPage setValueToBuyField(String value) {
-        $(By.xpath(buyInputLocator)).setValue(value);
+        $x(buyInputLocator).setValue(value);
         return this;
     }
 
     public CalculatorPage setValueToSellField(String value) {
-        $(By.xpath(sellInputLocator)).setValue(value);
+        $x(sellInputLocator).setValue(value);
         return this;
     }
 
     public String getSellInputValue() {
-        return $(By.xpath(sellInputLocator)).getValue();
+        return $x(sellInputLocator).getValue();
     }
 
     public String getBuyInputValue() {
-        return $(By.xpath(buyInputLocator)).getValue();
+        return $x(buyInputLocator).getValue();
     }
 
     public CalculatorPage clickLocationButton(){
-        $(By.xpath(chooseLocationButton)).click();
+        $x(chooseLocationButton).click();
         return this;
     }
 
@@ -63,13 +62,12 @@ public class CalculatorPage extends BasePage {
     }
 
     public CalculatorPage selectCountry(String countryName) {
-        $(By.xpath(String.format(selectCountryLocator, countryName))).click();
+        $x(String.format(selectCountryLocator, countryName)).click();
         return this;
     }
 
     public String getDefaultCurrencyDropdownValue(){
-       String letterDesignation = $(By.xpath(defaultCurrencyDropdownLocator)).getText();
-        return letterDesignation;
+        return $x(defaultCurrencyDropdownLocator).getText();
     }
 
 

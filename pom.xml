@@ -90,13 +90,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire.version}</version>
                 <configuration>
-                    <additionalClasspathElements>
-                        <additionalClasspathElement>src/main/resources/env.properties</additionalClasspathElement>
-                    </additionalClasspathElements>
-                    <testFailureIgnore>true</testFailureIgnore>
-                    <includes>
-                        <include>**/*Test*.java</include>
-                    </includes>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>

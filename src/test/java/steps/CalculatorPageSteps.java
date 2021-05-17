@@ -4,7 +4,8 @@ import io.qameta.allure.Step;
 import pages.CalculatorPage;
 
 public class CalculatorPageSteps {
-    CalculatorPage calculatorPage;
+
+    private CalculatorPage calculatorPage;
 
     public CalculatorPageSteps() {
         calculatorPage = new CalculatorPage();
@@ -49,7 +50,7 @@ public class CalculatorPageSteps {
 
     @Step("Get letter designation from default currency dropdown")
     public String getDefaultCurrencyDropdownValueStep() {
-        calculatorPage.isPageOpened();
+        calculatorPage.waitForPageLoad();
         return calculatorPage
                 .getDefaultCurrencyDropdownValue();
     }

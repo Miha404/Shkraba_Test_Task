@@ -10,18 +10,19 @@ public class InitDriver {
     DriverManagerType driverManagerType;
 
     public void initDriverSettings() {
+
         switch (PropertyReader.getProperty("browser.name").toLowerCase()) {
             case "chrome":
                 driverManagerType = DriverManagerType.CHROME;
-                WebDriverManager.getInstance(driverManagerType).setup();
                 break;
             case "firefox":
                 driverManagerType = DriverManagerType.FIREFOX;
-                WebDriverManager.getInstance(driverManagerType).setup();
+
                 break;
             default:
                 log.error("Browser " + PropertyReader.getProperty("browser.name") + " is not supported.");
         }
+        WebDriverManager.getInstance(driverManagerType).setup();
         Configuration.browser = PropertyReader.getProperty("browser.name");
         Configuration.startMaximized = PropertyReader.getProperty("maximize").equalsIgnoreCase("true");
         Configuration.timeout = Integer.parseInt(PropertyReader.getProperty("implicitly.wait"));

@@ -9,7 +9,7 @@ public class BuySellFieldsTest extends BaseCalculatorTest {
 
     @BeforeClass
     public void openCalculatorPage(){
-        mainPage.openPage().openCalculatorPage().isPageOpened();
+        mainPage.openPage().openCalculatorPage().waitForPageLoad();
     }
 
     @DataProvider(name = "input-values")

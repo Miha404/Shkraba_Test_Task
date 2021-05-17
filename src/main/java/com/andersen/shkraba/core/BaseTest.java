@@ -1,11 +1,11 @@
-package com.andersen.shkraba.baseModels;
+package com.andersen.shkraba.core;
 
 import com.andersen.shkraba.utils.InitDriver;
 import org.testng.annotations.BeforeClass;
 
 public abstract class BaseTest {
 
-    InitDriver initDriver;
+    private InitDriver initDriver;
 
     @BeforeClass
     public void initPages() {
@@ -13,6 +13,6 @@ public abstract class BaseTest {
         initDriver.initDriverSettings();
     }
 
-    protected abstract void createPages();
+    protected abstract void createPage();
 
 }
