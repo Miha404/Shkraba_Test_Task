@@ -1,9 +1,10 @@
 package com.andersen.shkraba.utils;
-import lombok.extern.log4j.Log4j2;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+
+import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 public final class PropertyReader {
@@ -22,9 +23,9 @@ public final class PropertyReader {
 
     public static Properties readProperties() {
         properties = new Properties();
+        log.info("Read driver properties");
         try {
             inputStream = PropertyReader.class.getResourceAsStream(getCorrectPath());
-            if (inputStream != null)
                 properties.load(inputStream);
         } catch (Exception ex) {
             if (inputStream != null) {

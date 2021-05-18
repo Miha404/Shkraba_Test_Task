@@ -1,12 +1,11 @@
 package pages;
 
-import com.andersen.shkraba.core.BasePage;
 import com.codeborne.selenide.Condition;
-import com.andersen.shkraba.utils.PropertyReader;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+import com.andersen.shkraba.core.BasePage;
+import com.andersen.shkraba.utils.PropertyReader;
 
 public class MainPage extends BasePage {
     private final String bottomBar = "//div/*[@class='container']";

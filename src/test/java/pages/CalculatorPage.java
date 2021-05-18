@@ -51,7 +51,7 @@ public class CalculatorPage extends BasePage {
         return $x(buyInputLocator).getValue();
     }
 
-    public CalculatorPage clickLocationButton(){
+    public CalculatorPage clickLocationButton() {
         $x(chooseLocationButton).click();
         return this;
     }
@@ -66,7 +66,7 @@ public class CalculatorPage extends BasePage {
         return this;
     }
 
-    public String getDefaultCurrencyDropdownValue(){
+    public String getDefaultCurrencyDropdownValue() {
         return $x(defaultCurrencyDropdownLocator).getText();
     }
 

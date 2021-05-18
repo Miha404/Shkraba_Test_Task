@@ -1,7 +1,7 @@
 package com.andersen.shkraba.core;
 
-import com.andersen.shkraba.utils.InitDriver;
 import org.testng.annotations.BeforeClass;
+import com.andersen.shkraba.utils.InitDriver;
 
 public abstract class BaseTest {
 
